@@ -19,3 +19,4 @@ a discord bot that does nothing great in particular
   - whoami -> returns the current user
 - math calculations
   - whats 1+1 -> adds two numbers
+  - whats 3-2 -> subtracts two numbers
