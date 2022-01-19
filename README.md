@@ -44,3 +44,5 @@ a discord bot that does nothing great in particular
   - shut up _ min makes bot dormant for _ minutes
   - shut up _ hr makes bot dormant for _ hours
   - you can talk now -> overrides the timeout period
+  - shut up forever -> shuts up until you say you can talk now or for 12 hours, 60 minutes, and 60 seconds whichever comes first
+  - shut up until i say so -> shuts up until you say you can talk now or for 12 hours, 60 minutes, and 60 seconds whichever comes first
