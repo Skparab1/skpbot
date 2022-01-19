@@ -17,3 +17,5 @@ a discord bot that does nothing great in particular
   - echo <whatever> -> returns whatever you type
   - whats the channel -> returns the text channel name
   - whoami -> returns the current user
+- math calculations
+  - whats 1+1 -> adds two numbers
