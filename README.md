@@ -16,3 +16,4 @@ a discord bot that does nothing great in particular
   - whats the time -> returns 12-hr time
   - echo <whatever> -> returns whatever you type
   - whats the channel -> returns the text channel name
+  - whoami -> returns the current user
