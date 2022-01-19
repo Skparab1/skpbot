@@ -15,4 +15,4 @@ a discord bot that does nothing great in particular
 - commands
   - whats the time -> returns 12-hr time
   - echo <whatever> -> returns whatever you type
-  - whats the channel
+  - whats the channel -> returns the text channel name
