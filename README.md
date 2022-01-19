@@ -35,3 +35,8 @@ a discord bot that does nothing great in particular
   - yo skp gettime austin -> returns time in austin
   - yo skp gettime new delhi -> returns time in new delhi
   - yo skp gettime beijing -> returns time in beijing
+- timer
+  - yo starttimer -> starts timer
+  - yo stoptimer -> stops timer
+- shut up
+  - makes bot dormant for 30 sec (default)
