@@ -14,6 +14,7 @@ a discord bot that does nothing great in particular
   - no i didnt -> yes you did
 - commands
   - whats the time -> returns 12-hr time
+  - whats the date -> returns date
   - echo <whatever> -> returns whatever you type
   - whats the channel -> returns the text channel name
   - whoami -> returns the current user
@@ -27,3 +28,10 @@ a discord bot that does nothing great in particular
 - getdate
   - yo skp getdate -> returns date
   - whats the date -> returns date
+- getttime
+  - yo skp gettime -> returns time
+  - whats the time -> returns time
+  - yo skp gettime ny -> returns time in new york
+  - yo skp gettime austin -> returns time in austin
+  - yo skp gettime new delhi -> returns time in new delhi
+  - yo skp gettime beijing -> returns time in beijing
