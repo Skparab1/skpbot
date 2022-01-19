@@ -3,9 +3,10 @@ import os
 import time
 from datetime import date
 from datetime import datetime
+#from discord.ext import tasks
 
 client = discord.Client()
-
+#bot = commands.Bot(command_prefix=!)
 
 starttimer = 0
 starttimer1 = [0,0,45]
@@ -18,6 +19,8 @@ ans = 'since the bot has been restarted, ans has no value'
 #if shutup and (elapsedtime1[2] >= shutuptime[2] or elapsedtime1[1] > shutuptime[1] or elapsedtime1[0] > shutuptime[0]):
   #await message.channel.send('Im back now yay')
   #shutup = False
+print('always here?1')
+
 
 @client.event
 async def on_ready():
@@ -29,14 +32,30 @@ async def on_ready():
       #elapsedtime += 1
       #await message.edit(content=elapsedtime)
 
+def shutupwait(shutuptime,message):
+  timegone = 0
+  while timegone < shutuptime[0]*60*60+shutuptime[1]*60+shutuptime[2]:
+    time.sleep(0.01)
+    timegone += 0.01
+    #message = (self.get_channel('testing').history(limit=1).flatten())[0]
+
+    print(message.content)
+    if message.content.startswith('ok you can talk now') or message.content.startswith('you can talk now'):
+      break
+      shutuptime = [0,0,0]
+
 @client.event
 async def on_message(message):
+    print('inside loop now')
     global starttimer
     global starttimer1
     global shutup
     global shutuptime
     global endtimer1
     global ans
+
+    if message.channel.name == "humans":
+      return
 
     if message.author == client.user and message.channel != "humans":
         return
@@ -66,10 +85,13 @@ async def on_message(message):
       await message.channel.send('Im back now yay')
       shutup = False
 
-    if message.content.startswith('ok you can talk now') or message.content.startswith('you can talk now'):
+    if message.content.startswith('ok you can talk now') or message.content.startswith('you can talk now') or message.content.startswith('you can come back now') or message.content.startswith('ok you can come back now'):
       blank = ''
-      #await message.channel.send('oops i did something wrong')
       shutuptime = [0,0,0]
+      await message.channel.send('you told me to un shut up')
+      await message.channel.send('yay im back now')
+      elapsedtime1 = [12,60,60]
+      shutup = False
 
     if (elapsedtime1[2] >= shutuptime[2] or elapsedtime1[1] > shutuptime[1] or elapsedtime1[0] > shutuptime[0]) and message.channel != "humans":
       try:
@@ -79,6 +101,10 @@ async def on_message(message):
             await message.channel.send(message.content.replace('echo',''))
         if message.content.startswith('whats the channel'):
             await message.channel.send(message.channel)
+        if message.content.startswith('whoami'):
+            await message.channel.send(message.author)
+        if message.content.startswith('pingme') or message.content.startswith('ping me'):
+            await message.channel.send('@'+str(message.author))
         if message.content.startswith('yo skp'):
             await message.channel.send('yo sup')
         if message.content.startswith('thats wrong'):
@@ -99,6 +125,8 @@ async def on_message(message):
             await message.channel.send("you're welcome")
         if message.content.startswith('you get a'):
             await message.channel.send('yum yum')
+        if message.content.startswith('no i didnt'):
+            await message.channel.send('yes you did')
 
         if message.content.startswith('whats'):
             text = message.content
@@ -160,7 +188,7 @@ async def on_message(message):
               shutuptime = [0,int(shutuptimegetter),0]
               await message.channel.send('I wont talk for '+str(shutuptimegetter)+' minutes')
 
-            elif 'sec' in shutuptimegetter or 'seconds' in shutuptimegetter or 'second' in shutuptimegetter:
+            elif 'hr' in shutuptimegetter or 'hours' in shutuptimegetter or 'hour' in shutuptimegetter:
               shutuptimegetter = shutuptimegetter.replace('hr','')
               shutuptimegetter = shutuptimegetter.replace('hour','')
               shutuptimegetter = shutuptimegetter.replace('hours','')
@@ -170,21 +198,15 @@ async def on_message(message):
 
             elif message.content.startswith('shut up forever') or message.content.startswith('shut up until i say so'):
                 await message.channel.send('nooooooooooooooo-')
-                shutuptime = [12,0,0]
+                shutuptime = [12,60,60]
 
             else:
               shutuptime = [0,0,30]
               await message.channel.send('I wont talk for 30 seconds')
             
-            timegone = 0
-            while timegone < shutuptime[0]*60*60+shutuptime[1]*60+shutuptime[2]:
-              time.sleep(0.01)
-              timegone += 0.01
-              if message.content.startswith('ok you can talk now') or message.content.startswith('you can talk now'):
-                break
-                shutuptime = [0,0,0]
+            #shutupwait(shutuptime,message)
 
-            await message.channel.send('Im back now yay')
+            #await message.channel.send('Im back now yay')
 
         if message.content.startswith('yo starttimer'):
           
