@@ -5,3 +5,6 @@ a discord bot that does nothing great in particular
   - thats wrong -> oops
   - yay -> yay
   - lol -> haha
+  - hi -> hello
+  - hello -> hi
+  - 
