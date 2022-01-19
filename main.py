@@ -160,10 +160,6 @@ async def on_message(message):
               shutuptime = [0,int(shutuptimegetter),0]
               await message.channel.send('I wont talk for '+str(shutuptimegetter)+' minutes')
 
-              time.sleep(shutuptime[0]*60*60*100+shutuptime[1]*60*100+shutuptime[2]*100)
-
-              await message.channel.send('Im back now yay')
-
             elif 'sec' in shutuptimegetter or 'seconds' in shutuptimegetter or 'second' in shutuptimegetter:
               shutuptimegetter = shutuptimegetter.replace('hr','')
               shutuptimegetter = shutuptimegetter.replace('hour','')
@@ -174,9 +170,21 @@ async def on_message(message):
 
             elif message.content.startswith('shut up forever') or message.content.startswith('shut up until i say so'):
                 await message.channel.send('nooooooooooooooo-')
+                shutuptime = [12,0,0]
+
             else:
               shutuptime = [0,0,30]
               await message.channel.send('I wont talk for 30 seconds')
+            
+            timegone = 0
+            while timegone < shutuptime[0]*60*60+shutuptime[1]*60+shutuptime[2]:
+              time.sleep(0.01)
+              timegone += 0.01
+              if message.content.startswith('ok you can talk now') or message.content.startswith('you can talk now'):
+                break
+                shutuptime = [0,0,0]
+
+            await message.channel.send('Im back now yay')
 
         if message.content.startswith('yo starttimer'):
           
