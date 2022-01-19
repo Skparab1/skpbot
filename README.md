@@ -4,4 +4,4 @@ a discord bot that does nothing great in particular
   - yo skp -> yo sup
   - thats wrong -> oops
   - yay -> yay
-  - 
+  - lol -> haha
