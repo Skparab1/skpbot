@@ -10,4 +10,4 @@ a discord bot that does nothing great in particular
   - thats correct -> yay
   - good job -> thanks
   - thanks -> you're welcome
-  - 
+  - you get a cookie -> yum yum
