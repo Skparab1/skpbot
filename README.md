@@ -26,3 +26,4 @@ a discord bot that does nothing great in particular
   - whats 3^2 -> returns simplified exponential
 - getdate
   - yo skp getdate -> returns date
+  - whats the date -> returns date
