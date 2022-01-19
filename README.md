@@ -21,3 +21,6 @@ a discord bot that does nothing great in particular
 - math calculations
   - whats 1+1 -> adds two numbers
   - whats 3-2 -> subtracts two numbers
+  - whats 1*2 -> multiplies two numbers
+  - whats 3/4 -> divides two numbers
+  - whats 3^2 -> returns simplified exponential
