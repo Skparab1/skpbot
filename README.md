@@ -11,3 +11,4 @@ a discord bot that does nothing great in particular
   - good job -> thanks
   - thanks -> you're welcome
   - you get a cookie -> yum yum
+  - no i didnt -> yes you did
