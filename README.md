@@ -7,4 +7,5 @@ a discord bot that does nothing great in particular
   - lol -> haha
   - hi -> hello
   - hello -> hi
-  - 
+  - thats correct -> yay
+  - good job -> thanks
