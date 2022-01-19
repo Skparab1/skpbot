@@ -14,3 +14,5 @@ a discord bot that does nothing great in particular
   - no i didnt -> yes you did
 - commands
   - whats the time -> returns 12-hr time
+  - echo <whatever> -> returns whatever you type
+  - whats the channel
