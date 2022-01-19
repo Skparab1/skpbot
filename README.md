@@ -12,3 +12,5 @@ a discord bot that does nothing great in particular
   - thanks -> you're welcome
   - you get a cookie -> yum yum
   - no i didnt -> yes you did
+- commands
+  - whats the time -> returns 12-hr time
