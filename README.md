@@ -9,3 +9,5 @@ a discord bot that does nothing great in particular
   - hello -> hi
   - thats correct -> yay
   - good job -> thanks
+  - thanks -> you're welcome
+  - 
