@@ -38,6 +38,7 @@ a discord bot that does nothing great in particular
 - timer
   - yo starttimer -> starts timer
   - yo stoptimer -> stops timer
+  - yo settimer -> sets timer for 1 minute
 - shut up (because this bot talks a lot)
   - shut up -> makes bot dormant for 30 sec (default)
   - shut up _ sec makes bot dormant for _ seconds
