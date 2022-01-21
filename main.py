@@ -3,6 +3,7 @@ import os
 import time
 from datetime import date
 from datetime import datetime
+from quadfm import quadfm
 #from discord.ext import tasks
 
 client = discord.Client()
@@ -14,12 +15,17 @@ shutup = False
 shutuptime = [0,0,0]
 endtimer1 = [0,0,0]
 elapsedtime1 = [0,0,0]
+
+timertime = [0,0,0]
+elapsedtime2 = [0,0,0]
+starttimer2 = [0,0,0]
+timerstarted = False
 ans = 'since the bot has been restarted, ans has no value'
 
 #if shutup and (elapsedtime1[2] >= shutuptime[2] or elapsedtime1[1] > shutuptime[1] or elapsedtime1[0] > shutuptime[0]):
   #await message.channel.send('Im back now yay')
   #shutup = False
-print('always here?1')
+print('Starting up...')
 
 
 @client.event
@@ -53,6 +59,10 @@ async def on_message(message):
     global shutuptime
     global endtimer1
     global ans
+    global timerstarted
+    global timertime
+    global elapsedtime2
+    global starttimer2 
 
     if message.channel.name == "humans":
       return
@@ -127,6 +137,32 @@ async def on_message(message):
             await message.channel.send('yum yum')
         if message.content.startswith('no i didnt'):
             await message.channel.send('yes you did')
+        if message.content.startswith('🤛'):
+            await message.channel.send('🤜')
+        if message.content.startswith('🤜'):
+            await message.channel.send('🤛')
+        if message.content.startswith('PUT MEEEEE OUUUUUT'):
+            await message.channel.send(':droplet::droplet::droplet::droplet::droplet::droplet::droplet::droplet::droplet::droplet::droplet:')
+            await message.channel.send(':fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher::fire_extinguisher:')
+        if message.content.startswith('HELP IM ON FIRE'):
+            await message.channel.send('rip')
+            
+        if message.content.startswith('quadfm'):
+            data = message.content.replace('quadfm','')
+            data = data.split()
+            returntxt = quadfm(data[0],data[1],data[2])
+
+            await message.channel.send(returntxt)
+
+        if message.content.startswith('gettable'):
+           data = message.content.replace('gettable','')
+           data = data.replace(' ','')
+           #if 
+
+        if message.content.startswith('yo help'):
+            await message.channel.send('Commands')
+
+            await message.channel.send('For a full list co commands go to https://github.com/Skparab1/skpbot/blob/main/README.md')
 
         if message.content.startswith('whats'):
             text = message.content
@@ -209,6 +245,9 @@ async def on_message(message):
             #await message.channel.send('Im back now yay')
 
         if message.content.startswith('yo starttimer'):
+            time1 = message.content.replace('yo starttimer','')
+            time1 = time1.replace(' ','')
+
           
             dt = datetime.now()
             minute = str(int(dt.strftime("%M")))
@@ -217,13 +256,59 @@ async def on_message(message):
             ampm = 'AM' if int(hour) <= 12 else 'PM'
             hour = str(hour) if int(hour) <= 12 else (str(int(hour)-12))
             hour = str(hour) if int(hour) <= 12 else (str(int(hour)-12))
-            starttimer = [hour,minute,second]
+            starttimer2 = [hour,minute,second]
 
             msg = 'Timer started at '+str(hour)+':'+str(minute)+':'+str(second)+' '+ampm
+            timerstarted = True
             await message.channel.send(msg)
 
-        if message.content.startswith('yo stoptimer'):
+        if message.content.startswith('yo settimer'):
           
+            dt = datetime.now()
+            minute = str(int(dt.strftime("%M")))
+            hour = int(dt.strftime("%H")) + 16
+            second = dt.strftime("%S")
+            ampm = 'AM' if int(hour) <= 12 else 'PM'
+            hour = str(hour) if int(hour) <= 12 else (str(int(hour)-12))
+            hour = str(hour) if int(hour) <= 12 else (str(int(hour)-12))
+            starttimer2 = [hour,minute,second]
+            timegetter = message.content.replace('yo settimer','')
+
+            if 'sec' in timegetter or 'seconds' in timegetter or 'second' in timegetter:
+              timegetter = timegetter.replace('sec','')
+              timegetter = timegetter.replace('second','')
+              timegetter = timegetter.replace('seconds','')
+              timegetter = timegetter.replace(' ','')
+              timegetter1 = [0,0,int(timegetter)]
+              await message.channel.send('Timer set for'+str(timegetter)+' seconds')
+
+            elif 'min' in timegetter or 'minutes' in timegetter or 'minute' in timegetter:
+              timegetter = timegetter.replace('min','')
+              timegetter = timegetter.replace('minutes','')
+              timegetter = timegetter.replace('minute','')
+              timegetter = timegetter.replace(' ','')
+              timegetter1 = [0,int(timegetter),0]
+              await message.channel.send('Timer set for '+str(timegetter)+' minutes')
+
+            elif 'hr' in timegetter or 'hours' in timegetter or 'hour' in timegetter:
+              timegetter = timegetter.replace('hr','')
+              timegetter = timegetter.replace('hour','')
+              timegetter = timegetter.replace('hours','')
+              timegetter = timegetter.replace(' ','')
+              timegetter1 = [int(timegetter),0,0]
+              await message.channel.send('Timer set for '+str(timegetter)+' hours')
+
+            else:
+              timegetter1 = [0,0,30]
+              await message.channel.send('Timer set for 1 minute')
+
+            time.sleep(timegetter1[0]*60*60+timegetter1[1]*60+timegetter1[2])
+            await message.channel.send('Timer done!')
+
+        if message.content.startswith('yo stoptimer'):
+
+          if (timerstarted):
+            timerstarted = False
             dt = datetime.now()
             minute = str(int(dt.strftime("%M")))
             hour = int(dt.strftime("%H")) + 16
@@ -263,6 +348,10 @@ async def on_message(message):
               msg = 'Time: '+str(elapsedtime[0])+str(elapsedtime[1])+str(elapsedtime[2])
 
             await message.channel.send(msg)
+
+          else:
+            await message.channel.send('You need to start the timer first!')
+            await message.channel.send('run yo starttimer')
 
         if message.content.startswith('yo skp getdate') or message.content.startswith('whats the date'):
           
