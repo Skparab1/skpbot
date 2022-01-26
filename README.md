@@ -1,5 +1,5 @@
 # skpbot
-a discord bot that does nothing great in particular
+a discord bot that converses, does math calculations, and gets the time
 - conversation responding
   - yo skp -> yo sup
   - thats wrong -> oops
