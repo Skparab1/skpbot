@@ -22,7 +22,7 @@ a discord bot that converses, does math calculations, and gets the time
   - echo <whatever> -> returns whatever you type
   - whats the channel -> returns the text channel name
   - whoami -> returns the current user
-  - pingme
+  - 
 - math calculations
   - whats 1+1 -> adds two numbers
   - whats 3-2 -> subtracts two numbers
