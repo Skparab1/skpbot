@@ -30,7 +30,7 @@ a discord bot that does nothing great in particular
   - whats 3/4 -> divides two numbers
   - whats 3^2 -> returns simplified exponential
   - quadfm 1 2 3 -> does quadratic formula (with imaginaries)
-  - gettable 3x^2+4x-5,range=-5,6,1 -> gets table for given equation 
+  - gettable 3x^2+4x-5,range=-5,6,1 -> gets table for given equation with values for given range
 - getdate
   - yo skp getdate -> returns date
   - whats the date -> returns date
