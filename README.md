@@ -12,6 +12,10 @@ a discord bot that does nothing great in particular
   - thanks -> you're welcome
   - you get a cookie -> yum yum
   - no i didnt -> yes you did
+  - 🔫 hand over the eggs -> 🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚
+  - HELP IM ON FIRE -> rip
+  - PUT MEEEEE OUUUUUT -> 💧💧💧💧💧💧💧💧💧💧💧💧💧💧💧💧 🧯🧯🧯🧯🧯🧯🧯🧯🧯🧯🧯🧯🧯🧯🧯
+  - rip -> ikr
 - commands
   - whats the time -> returns 12-hr time
   - whats the date -> returns date
@@ -25,6 +29,7 @@ a discord bot that does nothing great in particular
   - whats 1*2 -> multiplies two numbers
   - whats 3/4 -> divides two numbers
   - whats 3^2 -> returns simplified exponential
+  - quadfm 1 2 3 -> does quadratic formula (with imaginaries)
 - getdate
   - yo skp getdate -> returns date
   - whats the date -> returns date
