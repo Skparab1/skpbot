@@ -28,7 +28,7 @@ a discord bot that converses, does math calculations, and gets the time
   - whats 1*2 -> multiplies two numbers
   - whats 3/4 -> divides two numbers
   - whats 3^2 -> returns simplified exponential
-  - quadfm 1 2 3 -> does quadratic formula (with imaginaries) (for imaginaries it will give a fraction and a 
+  - quadfm 1 2 3 -> does quadratic formula (with imaginaries) (for imaginaries it will give a fraction and a complex number
   - gettable 3x^2+4x-5,range=-5,6,1 -> gets table for given equation with values for given range
 - getdate
   - yo skp getdate -> returns date
